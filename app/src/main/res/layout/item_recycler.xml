@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/custom_item_fasl"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:layout_margin="8dp"
+    android:background="@drawable/backgrand_fasl">
+
+    <TextView
+        android:id="@+id/text_fasl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/fasl"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.885"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/image_fasl"
+        android:layout_width="86dp"
+        android:layout_height="97dp"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/text_fasl"
+        app:layout_constraintEnd_toStartOf="@+id/text_fasl"
+        app:layout_constraintHorizontal_bias="0.139"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/text_fasl"
+        app:layout_constraintVertical_bias="0.492"
+        tools:srcCompat="@drawable/img2"
+        android:contentDescription="@string/todo" />
+</androidx.constraintlayout.widget.ConstraintLayout>

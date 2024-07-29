@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">cus.recycler.faslha</string>
+    <string name="dars">دروس</string>
+    <string name="faslha">faslha</string>
+    <string name="fasl">فصل اول</string>
+    <string name="todo">TODO</string>
+    <string name="todo1">TODO</string>
+    <string name="too">TODO</string>
+    <string name="todo2">TODO</string>
+    <string name="todo3">TODO</string>
+</resources>

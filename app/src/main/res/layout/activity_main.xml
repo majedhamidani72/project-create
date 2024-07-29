@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back3"
+    tools:context=".ui.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.example.cusrecyclerfaslha.custom.CustomItemFasl
+            android:id="@+id/customRecycler1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="فصل اول"
+            app:img="@drawable/img1"/>
+
+        <com.example.cusrecyclerfaslha.custom.CustomItemFasl
+            android:id="@+id/customRecycler2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="فصل دوم"
+            app:img="@drawable/img2"/>
+
+        <com.example.cusrecyclerfaslha.custom.CustomItemFasl
+            android:id="@+id/customRecycler3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="فصل سوم"
+            app:img="@drawable/img3"/>
+
+        <com.example.cusrecyclerfaslha.custom.CustomItemFasl
+            android:id="@+id/customRecycler4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="فصل چهارم"
+            app:img="@drawable/img4"/>
+
+        <com.example.cusrecyclerfaslha.custom.CustomItemFasl
+            android:id="@+id/customRecycler5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="فصل پنچم"
+            app:img="@drawable/img5"/>
+
+        <com.example.cusrecyclerfaslha.custom.CustomItemFasl
+            android:id="@+id/customRecycler6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="فصل ششم"
+            app:img="@drawable/img6"/>
+
+        <com.example.cusrecyclerfaslha.custom.CustomItemFasl
+            android:id="@+id/customRecycler7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="فصل هفتم"
+            app:img="@drawable/img7"/>
+
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
