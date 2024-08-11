@@ -3,19 +3,39 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
-        android:largeHeap="true"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/logo"
         android:label="ریاضی پنجم"
+        android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cusrecyclerfaslha"
         tools:targetApi="31">
         <activity
-            android:name=".ui.SubjectsActivity"
+            android:name=".Chapter7Activity"
             android:exported="false" />
-        <!-- تنظیم SplashActivity به عنوان اکتیویتی اولیه -->
+        <activity
+            android:name=".Chapter6Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Chapter5Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Chapter4Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Chapter3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Chapter2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Chapter1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.SubjectsActivity"
+            android:exported="false" /> <!-- تنظیم SplashActivity به عنوان اکتیویتی اولیه -->
         <activity
             android:name=".splash.SplashActivity"
             android:exported="true">

@@ -8,11 +8,11 @@
     android:background="#1550C5">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/img_tadris"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:contentDescription="@string/todo1"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintBottom_toTopOf="@+id/img_gam"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,31 +20,31 @@
         app:srcCompat="@drawable/tadris" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/img_gam"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:contentDescription="@string/too"
-        app:layout_constraintBottom_toTopOf="@+id/imageView3"
+        app:layout_constraintBottom_toTopOf="@+id/img_namonesoalat"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/img_tadris"
         app:srcCompat="@drawable/gam" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/img_namonesoalat"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:contentDescription="@string/todo2"
-        app:layout_constraintBottom_toTopOf="@+id/imageView4"
+        app:layout_constraintBottom_toTopOf="@+id/img_azmon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/img_gam"
         app:srcCompat="@drawable/namonesoalat" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/img_azmon"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:contentDescription="@string/todo3"
@@ -52,7 +52,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/img_namonesoalat"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/azmon" />
 
