@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Cusrecyclerfaslha"
         tools:targetApi="31">
         <activity
+            android:name=".DetailGamChapter1"
+            android:exported="false" />
+        <activity
             android:name=".ui.ChapterActivity.chapter1.DetailTadrisChapter1"
             android:exported="false" />
         <activity

@@ -67,6 +67,39 @@ class Chapter1Activity : AppCompatActivity() {
 
     private fun gamFasl1() {
         // پیاده‌سازی عملیات خاص برای گام
+        // لیست آیتم‌ها برای نمایش در RecyclerView
+        val items = listOf(
+            Pair(R.drawable.imgfasl1, "فعالیت صفحه 2و 3"),
+            Pair(R.drawable.imgfasl1, "کاردرکلاس صفحه 3و4"),
+            Pair(R.drawable.imgfasl1, "فعالیت صفحه 4"),
+            Pair(R.drawable.imgfasl1, "کاردرکلاس صفحه 5"),
+            Pair(R.drawable.imgfasl1, "تمرین صفحه 5"),
+            Pair(R.drawable.imgfasl1, "فعالیت صفحه 6 و 7"),
+            Pair(R.drawable.imgfasl1, "کاردرکلاس صفحه 7 و 8"),
+            Pair(R.drawable.imgfasl1, "فعالیت صفحه 8"),
+            Pair(R.drawable.imgfasl1, "کاردر کلاس صفحه 8"),
+            Pair(R.drawable.imgfasl1, "تمرین صفحه 9"),
+            Pair(R.drawable.imgfasl1, "فعالیت صفحه 10 و 11"),
+            Pair(R.drawable.imgfasl1, "کاردرکلاس صفحه 11"),
+            Pair(R.drawable.imgfasl1, "فعالیت صفحه 12"),
+            Pair(R.drawable.imgfasl1, "کاردرکلاس صفحه 12"),
+            Pair(R.drawable.imgfasl1, "تمرین صفحه 13"),
+            Pair(R.drawable.imgfasl1, "فعالیت صفحه 14"),
+            Pair(R.drawable.imgfasl1, "اردرکلاس صفحه 15"),
+            Pair(R.drawable.imgfasl1, "فعالیت صفحه 16"),
+            Pair(R.drawable.imgfasl1, "کاردرکلاس صفحه 16"),
+            Pair(R.drawable.imgfasl1, "تمرین صفحه 17"),
+            Pair(R.drawable.imgfasl1, "مرور فصل صفحه 18 و 19")
+        )
+
+        val adapter = Tadris1Adapter(items) { position ->
+            val intent = Intent(this, DetailTadrisChapter1::class.java)
+            intent.putExtra("ITEM_POSITION", position)
+            startActivity(intent)
+        }
+
+        binding.recyclerTadrisFasl1.layoutManager = LinearLayoutManager(this)
+        binding.recyclerTadrisFasl1.adapter = adapter
     }
 
     private fun NamonesoalatFasl1() {
