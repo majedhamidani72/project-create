@@ -13,25 +13,28 @@
         android:theme="@style/Theme.Cusrecyclerfaslha"
         tools:targetApi="31">
         <activity
-            android:name=".Chapter7Activity"
+            android:name=".ui.ChapterActivity.chapter1.DetailTadrisChapter1"
             android:exported="false" />
         <activity
-            android:name=".Chapter6Activity"
+            android:name=".ui.ChapterActivity.Chapter7Activity"
             android:exported="false" />
         <activity
-            android:name=".Chapter5Activity"
+            android:name=".ui.ChapterActivity.Chapter6Activity"
             android:exported="false" />
         <activity
-            android:name=".Chapter4Activity"
+            android:name=".ui.ChapterActivity.Chapter5Activity"
             android:exported="false" />
         <activity
-            android:name=".Chapter3Activity"
+            android:name=".ui.ChapterActivity.Chapter4Activity"
             android:exported="false" />
         <activity
-            android:name=".Chapter2Activity"
+            android:name=".ui.ChapterActivity.Chapter3Activity"
             android:exported="false" />
         <activity
-            android:name=".Chapter1Activity"
+            android:name=".ui.ChapterActivity.Chapter2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ChapterActivity.chapter1.Chapter1Activity"
             android:exported="false" />
         <activity
             android:name=".ui.SubjectsActivity"

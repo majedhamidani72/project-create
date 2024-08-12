@@ -2,12 +2,11 @@ package com.example.cusrecyclerfaslha.ui
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.cusrecyclerfaslha.R
 import com.example.cusrecyclerfaslha.databinding.ActivitySubjectsBinding
-import com.example.cusrecyclerfaslha.databinding.ItemSubjectsBinding
 import com.example.cusrecyclerfaslha.ui.ChapterActivity.*
+import com.example.cusrecyclerfaslha.ui.ChapterActivity.chapter1.Chapter1Activity
 
 class SubjectsActivity : AppCompatActivity() {
 
