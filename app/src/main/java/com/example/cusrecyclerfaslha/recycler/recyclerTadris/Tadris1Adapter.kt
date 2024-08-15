@@ -31,8 +31,8 @@ class Tadris1Adapter(
     // تنظیم داده‌ها برای ViewHolder
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val (imageResId, text) = items[position]
-        holder.binding.itemImage.setImageResource(imageResId)
-        holder.binding.itemText.text = text
+        holder.binding.imgPdf.setImageResource(imageResId)
+        holder.binding.textPdf.text = text
     }
 
     // تعداد آیتم‌ها در لیست

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_search"
+        android:title="جستجو"
+        android:icon="@drawable/ic_search" />
+    <item
+        android:id="@+id/nav_help"
+        android:title="راهنما"
+        android:icon="@drawable/ic_help" />
+    <item
+        android:id="@+id/nav_contact"
+        android:title="ارتباط با ما"
+        android:icon="@drawable/ic_contact" />
+    <item
+        android:id="@+id/nav_our_apps"
+        android:title="برنامه های ما"
+        android:icon="@drawable/ic_apps" />
+    <item
+        android:id="@+id/nav_feedback"
+        android:title="نظر دادن"
+        android:icon="@drawable/ic_feedback" />
+    <item
+        android:id="@+id/nav_logout"
+        android:title="خروج"
+        android:icon="@drawable/ic_logout" />
+</menu>

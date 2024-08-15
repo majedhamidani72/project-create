@@ -8,4 +8,9 @@
     <string name="too">TODO</string>
     <string name="todo2">TODO</string>
     <string name="todo3">TODO</string>
+    <string name="pdf_icon">PDF Icon</string>
+    <string name="Todo">TODO</string>
+    <string name="navigation_drawer_open" />
+    <string name="navigation_drawer_close" />
+    <string name="nav_drawer_icon" />
 </resources>
