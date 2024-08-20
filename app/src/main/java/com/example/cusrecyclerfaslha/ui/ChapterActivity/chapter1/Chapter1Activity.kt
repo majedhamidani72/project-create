@@ -1,6 +1,5 @@
 package com.example.cusrecyclerfaslha.ui.ChapterActivity.chapter1
 
-import DetailGamChapter1
 import android.app.DownloadManager
 import android.content.Context
 import android.content.Intent
@@ -9,9 +8,6 @@ import android.os.Bundle
 import android.os.Environment
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.getSystemService
-import androidx.core.content.ContextCompat.startActivity
 import androidx.core.content.FileProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cusrecyclerfaslha.R

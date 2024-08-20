@@ -1,3 +1,5 @@
+package com.example.cusrecyclerfaslha.ui.ChapterActivity.chapter1
+
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.cusrecyclerfaslha.databinding.ActivityDetailGamChapter1Binding

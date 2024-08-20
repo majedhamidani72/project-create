@@ -1,20 +1,16 @@
-// ApiService.kt
-
 import com.example.cusrecyclerfaslha.remoteServer.defaultModel.DefaultModel
 import retrofit2.Response
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface ApiService {
-    @FormUrlEncoded
-    @POST("email/login")
-    suspend fun sendRequest(
-        @Field("email") emailTest: String
-    ): Response<DefaultModel>
+    // ارسال درخواست فیدبک با استفاده از متد GET
+    @GET("send")
+    suspend fun sendRequest_feedBack(
+        @Query("to") token: String,
+        @Query("text") message: String
+    ): Response<String>
 
-
-    //برای  دریافت جزئیات صفحات
+    // دریافت جزئیات صفحات با استفاده از متد POST
     @FormUrlEncoded
     @POST("getPageDetails")
     suspend fun getPageDetails(

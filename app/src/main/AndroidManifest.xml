@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
     <!-- درخواست مجوز اینترنت برای دانلود فایل‌ها -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
-
-    <!-- درخواست مجوز برای نوشتن در دایرکتوری خصوصی برنامه (ممکن است برای API 30 و بالاتر نیازی نباشد) -->
-    <!-- <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" tools:ignore="ScopedStorage" /> -->
-
-    <!-- تعریف FileProvider برای دسترسی به فایل‌ها -->
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -22,7 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Cusrecyclerfaslha"
         tools:targetApi="31">
-
+        <activity
+            android:name=".ui.NavDrawing.FeedbackActivity"
+            android:exported="false" />
         <!-- تعریف FileProvider -->
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -32,9 +28,7 @@
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
-        </provider>
-
-        <!-- تعریف فعالیت‌ها -->
+        </provider> <!-- تعریف فعالیت‌ها -->
         <activity
             android:name=".ui.ChapterActivity.chapter1.DetailGamChapter1"
             android:exported="false" />
@@ -70,6 +64,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

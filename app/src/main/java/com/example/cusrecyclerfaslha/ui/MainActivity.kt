@@ -10,6 +10,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.cusrecyclerfaslha.R
 import com.example.cusrecyclerfaslha.databinding.ActivityMainBinding
+import com.example.cusrecyclerfaslha.ui.NavDrawing.FeedbackActivity
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -22,6 +23,38 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setDrawingNavigation()
+
+        setCustomRecycler()
+
+        setToolBar()
+
+
+
+    }
+
+    private fun setToolBar() {
+        // Set up click listener for the ImageView in Toolbar
+        val toolbarIcon: ImageView = findViewById(R.id.img_toolbar_icon)
+        toolbarIcon.setOnClickListener {
+            // Open the navigation drawer
+            drawerLayout.openDrawer(GravityCompat.START)
+        }
+    }
+
+    private fun setCustomRecycler() {
+        // Handle clicks for custom items
+        binding.customRecycler1.setOnClickListener { handleCustomItemClick(1) }
+        binding.customRecycler2.setOnClickListener { handleCustomItemClick(2) }
+        binding.customRecycler3.setOnClickListener { handleCustomItemClick(3) }
+        binding.customRecycler4.setOnClickListener { handleCustomItemClick(4) }
+        binding.customRecycler5.setOnClickListener { handleCustomItemClick(5) }
+        binding.customRecycler6.setOnClickListener { handleCustomItemClick(6) }
+        binding.customRecycler7.setOnClickListener { handleCustomItemClick(7) }
+
+    }
+
+    private fun setDrawingNavigation() {
         // Initialize DrawerLayout
         drawerLayout = findViewById(R.id.drawer_layout)
 
@@ -39,25 +72,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         )
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
-
-        // Handle clicks for custom items
-        binding.customRecycler1.setOnClickListener { handleCustomItemClick(1) }
-        binding.customRecycler2.setOnClickListener { handleCustomItemClick(2) }
-        binding.customRecycler3.setOnClickListener { handleCustomItemClick(3) }
-        binding.customRecycler4.setOnClickListener { handleCustomItemClick(4) }
-        binding.customRecycler5.setOnClickListener { handleCustomItemClick(5) }
-        binding.customRecycler6.setOnClickListener { handleCustomItemClick(6) }
-        binding.customRecycler7.setOnClickListener { handleCustomItemClick(7) }
-
-
-        // Set up click listener for the ImageView in Toolbar
-        val toolbarIcon: ImageView = findViewById(R.id.img_toolbar_icon)
-        toolbarIcon.setOnClickListener {
-            // Open the navigation drawer
-            drawerLayout.openDrawer(GravityCompat.START)
-        }
-
-
     }
 
     private fun handleCustomItemClick(chapter: Int) {
@@ -84,7 +98,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 // Handle our apps action
             }
             R.id.nav_feedback -> {
-                // Handle feedback action
+                val intent = Intent(this, FeedbackActivity::class.java)
+                startActivity(intent)
             }
             R.id.nav_logout -> {
                 finishAffinity()
