@@ -1,19 +1,26 @@
 package com.example.cusrecyclerfaslha.db.dao
 
-import androidx.room.Dao
-import androidx.room.Entity
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 import com.example.cusrecyclerfaslha.db.DbHandler
+import com.example.cusrecyclerfaslha.db.model.EntitiUser
 import io.reactivex.rxjava3.core.Flowable
-import io.reactivex.rxjava3.internal.operators.flowable.FlowableBufferExactBoundary
 
 @Dao
 interface UserDao {
 
     @Insert
-    fun insertUser(user:Entity)
+    fun insertUser(user: EntitiUser)
 
-    @get:Query("SELECTE * FROM  ${DbHandler.USER_TABLE}" )
-    val getUser : Flowable<List<Entity>>
+    @Query("SELECT * FROM ${DbHandler.USER_TABLE}")
+    fun getUser(): Flowable<List<EntitiUser>>
+
+    @Update
+    fun updateUser(vararg user: EntitiUser)
+
+    @Delete
+    fun deleteUsers(vararg user: EntitiUser)
+
+
+    @Query("DELETE FROM ${DbHandler.USER_TABLE}")
+    fun deleteAll()
 }

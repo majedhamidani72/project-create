@@ -13,4 +13,6 @@
     <string name="navigation_drawer_open" />
     <string name="navigation_drawer_close" />
     <string name="nav_drawer_icon" />
+    <string name="nam">نام و نام خانوادگی</string>
+    <string name="feedback">لطفا نظر خود را وارد کنید:</string>
 </resources>
