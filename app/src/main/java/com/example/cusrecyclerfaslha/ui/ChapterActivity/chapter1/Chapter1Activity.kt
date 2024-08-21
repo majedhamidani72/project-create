@@ -1,8 +1,10 @@
 package com.example.cusrecyclerfaslha.ui.ChapterActivity.chapter1
 
 import android.app.DownloadManager
+import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
@@ -10,10 +12,14 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.cusrecyclerfaslha.R
 import com.example.cusrecyclerfaslha.databinding.ActivityChapter1Binding
-import com.example.cusrecyclerfaslha.recycler.recyclerTadris.Tadris1Adapter
+import com.example.cusrecyclerfaslha.recycler.recyclerTadris.Tadris1gam1Adapter
+import com.example.cusrecyclerfaslha.remoteServer.RetrofitService
 import com.example.cusrecyclerfaslha.ui.PdfAdapter
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import java.io.File
 
 class Chapter1Activity : AppCompatActivity() {
@@ -39,91 +45,61 @@ class Chapter1Activity : AppCompatActivity() {
 
     private fun tadrisFasl1() {
         // لیست آیتم‌ها برای نمایش در RecyclerView
-        val items = listOf(
-            Pair(R.drawable.imgfasl1, "فعالیت صفحه 2و 3"),
-            Pair(R.drawable.imgfasl1, "کاردرکلاس صفحه 3و4"),
-            Pair(R.drawable.imgfasl1, "فعالیت صفحه 4"),
-            Pair(R.drawable.imgfasl1, "کاردرکلاس صفحه 5"),
-            Pair(R.drawable.imgfasl1, "تمرین صفحه 5"),
-            Pair(R.drawable.imgfasl1, "فعالیت صفحه 6 و 7"),
-            Pair(R.drawable.imgfasl1, "کاردرکلاس صفحه 7 و 8"),
-            Pair(R.drawable.imgfasl1, "فعالیت صفحه 8"),
-            Pair(R.drawable.imgfasl1, "کاردر کلاس صفحه 8"),
-            Pair(R.drawable.imgfasl1, "تمرین صفحه 9"),
-            Pair(R.drawable.imgfasl1, "فعالیت صفحه 10 و 11"),
-            Pair(R.drawable.imgfasl1, "کاردرکلاس صفحه 11"),
-            Pair(R.drawable.imgfasl1, "فعالیت صفحه 12"),
-            Pair(R.drawable.imgfasl1, "کاردرکلاس صفحه 12"),
-            Pair(R.drawable.imgfasl1, "تمرین صفحه 13"),
-            Pair(R.drawable.imgfasl1, "فعالیت صفحه 14"),
-            Pair(R.drawable.imgfasl1, "اردرکلاس صفحه 15"),
-            Pair(R.drawable.imgfasl1, "فعالیت صفحه 16"),
-            Pair(R.drawable.imgfasl1, "کاردرکلاس صفحه 16"),
-            Pair(R.drawable.imgfasl1, "تمرین صفحه 17"),
-            Pair(R.drawable.imgfasl1, "مرور فصل صفحه 18 و 19")
-        )
-
-        val adapter = Tadris1Adapter(items) { position ->
-            val intent = Intent(this, DetailTadrisChapter1::class.java)
-            intent.putExtra("ITEM_POSITION", position)
-            startActivity(intent)
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val tadrisList = RetrofitService.apiService.getTadrisList()
+                withContext(Dispatchers.Main) {
+                    setupRecyclerView(tadrisList)
+                }
+            } catch (e: Exception) {
+                // مدیریت خطا
+                e.printStackTrace()
+            }
         }
-
-        binding.recyclerTadrisFasl1.layoutManager = LinearLayoutManager(this)
-        binding.recyclerTadrisFasl1.adapter = adapter
     }
 
     private fun gamFasl1() {
         // پیاده‌سازی عملیات خاص برای گام
-        // لیست آیتم‌ها برای نمایش در RecyclerView
-        val items = listOf(
-            Pair(R.drawable.imgfasl1, "فعالیت صفحه 2و 3"),
-            Pair(R.drawable.imgfasl1, "کاردرکلاس صفحه 3و4"),
-            Pair(R.drawable.imgfasl1, "فعالیت صفحه 4"),
-            Pair(R.drawable.imgfasl1, "کاردرکلاس صفحه 5"),
-            Pair(R.drawable.imgfasl1, "تمرین صفحه 5"),
-            Pair(R.drawable.imgfasl1, "فعالیت صفحه 6 و 7"),
-            Pair(R.drawable.imgfasl1, "کاردرکلاس صفحه 7 و 8"),
-            Pair(R.drawable.imgfasl1, "فعالیت صفحه 8"),
-            Pair(R.drawable.imgfasl1, "کاردر کلاس صفحه 8"),
-            Pair(R.drawable.imgfasl1, "تمرین صفحه 9"),
-            Pair(R.drawable.imgfasl1, "فعالیت صفحه 10 و 11"),
-            Pair(R.drawable.imgfasl1, "کاردرکلاس صفحه 11"),
-            Pair(R.drawable.imgfasl1, "فعالیت صفحه 12"),
-            Pair(R.drawable.imgfasl1, "کاردرکلاس صفحه 12"),
-            Pair(R.drawable.imgfasl1, "تمرین صفحه 13"),
-            Pair(R.drawable.imgfasl1, "فعالیت صفحه 14"),
-            Pair(R.drawable.imgfasl1, "اردرکلاس صفحه 15"),
-            Pair(R.drawable.imgfasl1, "فعالیت صفحه 16"),
-            Pair(R.drawable.imgfasl1, "کاردرکلاس صفحه 16"),
-            Pair(R.drawable.imgfasl1, "تمرین صفحه 17"),
-            Pair(R.drawable.imgfasl1, "مرور فصل صفحه 18 و 19")
-        )
-
-        val adapter = Tadris1Adapter(items) { position ->
-            val intent = Intent(this, DetailGamChapter1::class.java)
-            intent.putExtra("ITEM_POSITION", position)
-            startActivity(intent)
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val gamList = RetrofitService.apiService.getGamList()
+                withContext(Dispatchers.Main) {
+                    setupRecyclerView(gamList)
+                }
+            } catch (e: Exception) {
+                // مدیریت خطا
+                e.printStackTrace()
+            }
         }
+    }
 
+    private fun setupRecyclerView(items: List<Pair<Int, String>>) {
+        val adapter = Tadris1gam1Adapter(items) { position ->
+            // حذف انتقال به DetailTadrisChapter1
+            // به جای آن، اینجا می‌توانید اطلاعات را نمایش دهید یا عملیات خاصی انجام دهید
+            Toast.makeText(this, "Item clicked: ${items[position].second}", Toast.LENGTH_SHORT).show()
+        }
         binding.recyclerTadrisFasl1.layoutManager = LinearLayoutManager(this)
         binding.recyclerTadrisFasl1.adapter = adapter
     }
 
+
     private fun NamonesoalatFasl1() {
-        // فرض کنید این URL‌ها از سرور دریافت شده است
-        val pdfItems = listOf(
-            Pair("نسخه 1: نمونه سوالات فصل اول همراه با جواب", "https://example.com/pdf1.pdf"),
-            Pair("نسخه 2: نمونه سوالات فصل اول همراه با جواب", "https://example.com/pdf2.pdf"),
-            Pair("نسخه 3: نمونه سوالات فصل اول همراه با جواب", "https://example.com/pdf3.pdf"),
-            Pair("نسخه 4: نمونه سوالات فصل اول همراه با جواب", "https://example.com/pdf3.pdf"),
-            Pair("نسخه 4: نمونه سوالات فصل اول همراه با جواب", "https://example.com/pdf3.pdf"),
-            Pair("نسخه 5: نمونه سوالات فصل اول همراه با جواب", "https://example.com/pdf3.pdf"),
-            Pair("نسخه 6: نمونه سوالات فصل اول همراه با جواب", "https://example.com/pdf3.pdf"),
-            Pair("نسخه 7: نمونه سوالات فصل اول همراه با جواب", "https://example.com/pdf3.pdf"),
+        // دریافت لیست نمونه سوالات از سرور
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val pdfItems = RetrofitService.apiService.getPdfList() // فرض کنید این تابع لیست PDF‌ها را از سرور دریافت می‌کند
+                withContext(Dispatchers.Main) {
+                    setupPdfRecyclerView(pdfItems)
+                }
+            } catch (e: Exception) {
+                // مدیریت خطا
+                e.printStackTrace()
+            }
+        }
+    }
 
-            )
-
+    private fun setupPdfRecyclerView(pdfItems: List<Pair<String, String>>) {
         val adapter = PdfAdapter(this, pdfItems) { pdfUrl ->
             // دانلود و نمایش PDF
             downloadAndOpenPdf(pdfUrl)
@@ -132,16 +108,6 @@ class Chapter1Activity : AppCompatActivity() {
         binding.recyclerTadrisFasl1.layoutManager = LinearLayoutManager(this)
         binding.recyclerTadrisFasl1.adapter = adapter
     }
-
-
-    private fun azmonOnlinFasl1() {
-        // پیاده‌سازی عملیات خاص برای آزمون
-    }
-
-
-
-    //عملیات مربوط به دانلود نمونه سوالات
-
     private fun downloadAndOpenPdf(pdfUrl: String) {
         val fileName = Uri.parse(pdfUrl).lastPathSegment ?: "downloaded.pdf"
         val file = File(getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS), fileName)
@@ -150,7 +116,6 @@ class Chapter1Activity : AppCompatActivity() {
             // فایل قبلاً دانلود شده است، بنابراین آن را باز کنید
             openPdf(file)
         } else {
-            // فایل موجود نیست، بنابراین دانلود کنید
             val request = DownloadManager.Request(Uri.parse(pdfUrl))
                 .setTitle("دانلود PDF")
                 .setDescription("در حال دانلود PDF...")
@@ -158,14 +123,20 @@ class Chapter1Activity : AppCompatActivity() {
                 .setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
 
             val downloadManager = getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
-            downloadManager.enqueue(request)
+            val downloadId = downloadManager.enqueue(request)
 
-            Toast.makeText(this, "دانلود آغاز شد.", Toast.LENGTH_SHORT).show()
+            // استفاده از BroadcastReceiver برای دریافت اطلاعیه پس از اتمام دانلود
+            val onComplete = object : BroadcastReceiver() {
+                override fun onReceive(context: Context?, intent: Intent?) {
+                    val id = intent?.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1)
+                    if (id == downloadId) {
+                        openPdf(file) // باز کردن فایل پس از اتمام دانلود
+                        unregisterReceiver(this) // لغو ثبت BroadcastReceiver
+                    }
+                }
+            }
 
-            // پس از دانلود، فایل را باز کنید
-            // این قسمت ممکن است نیاز به استفاده از BroadcastReceiver برای اطلاع از پایان دانلود داشته باشد
-            // یا استفاده از DownloadManager.Query برای بررسی وضعیت دانلود
-            openPdf(file)
+            registerReceiver(onComplete, IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE))
         }
     }
 
@@ -176,6 +147,16 @@ class Chapter1Activity : AppCompatActivity() {
         intent.flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
         startActivity(intent)
     }
+
+
+    private fun azmonOnlinFasl1() {
+        Toast.makeText(this, "این  قسمت به زودی فعال خواهد شد", Toast.LENGTH_SHORT).show()
+        // پیاده‌سازی عملیات خاص برای آزمون
+    }
+
+
+    //عملیات مربوط به دانلود نمونه سوالات
+
 
 
 }

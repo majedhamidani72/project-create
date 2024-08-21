@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.cusrecyclerfaslha.R
 import com.example.cusrecyclerfaslha.databinding.ItemSubjectNamonesoalatBinding
 
 class PdfAdapter(
@@ -27,7 +28,7 @@ class PdfAdapter(
             // به‌روزرسانی ویوها با استفاده از View Binding
             binding.textPdf.text = pdfItem.first
             // تنظیم تصویر اگر نیاز است، مثلا برای PDF‌ها ممکن است نیازی به تصویر نباشد
-            // binding.itemImage.setImageResource(R.drawable.ic_pdf)
+             binding.itemImage.setImageResource(R.drawable.ic_pdf)
         }
     }
 

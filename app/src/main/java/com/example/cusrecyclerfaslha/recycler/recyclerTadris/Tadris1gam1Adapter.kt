@@ -7,10 +7,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.cusrecyclerfaslha.databinding.ItemSubjectTadrisBinding
 
 // تعریف کلاس آداپتر
-class Tadris1Adapter(
+class Tadris1gam1Adapter(
     private val items: List<Pair<Int, String>>, // لیستی از زوج‌های عکس و متن
     private val onItemClick: (Int) -> Unit // کال‌بک برای کلیک روی آیتم‌ها
-) : RecyclerView.Adapter<Tadris1Adapter.ViewHolder>() {
+) : RecyclerView.Adapter<Tadris1gam1Adapter.ViewHolder>() {
 
     // کلاس ViewHolder که مسئول نمایش هر آیتم است
     inner class ViewHolder(val binding: ItemSubjectTadrisBinding) : RecyclerView.ViewHolder(binding.root) {

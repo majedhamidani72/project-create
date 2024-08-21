@@ -18,4 +18,14 @@ interface ApiService {
     suspend fun getPageDetails(
         @Field("position") position: Int
     ): Response<DefaultModel>
+
+    @GET("gam")  // آدرس انتهای برای دریافت لیست گام
+    suspend fun getGamList(): List<Pair<Int, String>>
+
+    @GET("tadris")  // آدرس انتهای برای دریافت لیست تدریس
+    suspend fun getTadrisList(): List<Pair<Int, String>>
+
+    @GET("pdfList")  // آدرس انتهایی برای دریافت لیست PDF
+    suspend fun getPdfList(): List<Pair<String, String>>
+
 }
