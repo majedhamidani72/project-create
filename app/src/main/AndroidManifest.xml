@@ -18,9 +18,11 @@
         android:theme="@style/Theme.Cusrecyclerfaslha"
         tools:targetApi="31">
         <activity
-            android:name=".ui.NavDrawing.FeedbackActivity"
+            android:name=".FeedbackActivity"
             android:exported="false" />
-        <!-- تعریف FileProvider -->
+        <activity
+            android:name=".ui.NavDrawing.FeedbackActivity"
+            android:exported="false" /> <!-- تعریف FileProvider -->
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.provider"
